@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply font-manrope text-[15px] leading-[25px];
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @layer components {
+    .heading-1 {
+        @apply font-manrope font-bold text-[56px] leading-[58px] tracking-[0.357em] uppercase;
+    }
+
+    .heading-2 {
+        @apply font-manrope font-bold text-[40px] leadinng-[44px] tracking-[0.0375em] uppercase;
+    }
+
+    .heading-3 {
+        @apply font-manrope font-bold text-[32px] leading-[36px] tracking-[0.0359em] uppercase;
+    }
+
+    .heading-4 {
+        @apply font-manrope font-bold text-[28px] leading-[38px] tracking-[0.071em] uppercase;
+    }
+
+    .heading-5 {
+        @apply font-manrope font-bold text-[24px] leading-[33px] tracking-[0.070em] uppercase;
+    }
+
+    .heading-6 {
+        @apply font-manrope font-bold text-[18px] leading-[24px] tracking-[0.072em] uppercase;
+    }
+
+    .subtitle-1 {
+        @apply font-manrope text-primary font-normal text-[14px] leading-[25px] tracking-[0.71em] uppercase;
+    }
+
+    .subtitle {
+        @apply font-manrope text-primary font-bold text-[13px] leading-[25px] tracking-[0.076em] uppercase
+    }
+    
+  }
+ 
