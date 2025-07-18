@@ -1,4 +1,5 @@
 import React from 'react'
+import PrimaryButton from './ui/PrimaryButton'
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
             <p className='text-whiteprimary text-base'>
                 Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-            <button className='w-[150px] h-50px bg-primary text-whiteprimary py-3 px-4'>See product</button>
+           <PrimaryButton/>
         </div>
     </div>
   )

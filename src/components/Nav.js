@@ -3,8 +3,8 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 
 export default function Nav() {
   return (
-    <div className='flex py-6 justify-between items-center text-white bg-dark px-[70px]'>
-        <h3 className='font-extrabold text-2xl'>audiophile</h3>
+    <div className='flex py-6 justify-between items-center text-white bg-dark px-[70px] border-b-[1px] border-solid border-gray-600'>
+          <img src="./assets/shared/desktop/logo.svg" alt="logo" />
         <ul className="flex gap-8 uppercase text-sm">
             <li className="cursor-pointer hover:scale-110 hover:text-primary transition-all duration-300">Home</li>
             <li className="cursor-pointer hover:scale-110 hover:text-primary transition-all duration-300">Headphones</li>

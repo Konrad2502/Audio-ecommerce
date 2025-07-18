@@ -1,21 +1,21 @@
-import React from 'react';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+
+import { useContext } from 'react';
+import { DataContext } from '../context/DataContext';
+import ProductCard from './ProductCard';
+
 
 export default function Products() {
+
+ const {categories} = useContext(DataContext);
+ console.log(categories)
+ 
   return (
-    <div>
-        <div>
-            <div>
-                <img src="" alt="" />
-                <h4>Headphones</h4>
-                <button>
-                    <span>Shop</span>
-                    <ArrowRightIcon className="w-6 h-6 text-primary" />
-                </button>
-            </div>
-            <div></div>
-            <div></div>
-        </div>
+    <div className="px-[70px] mt-[300px] mb-[200px]">
+      <div className="flex gap-8 items-end">
+       {categories.map(category => (
+        <ProductCard key={category.id} name={category.name} imgSrc={category.thumbnail}/>
+       ))}
+      </div>
     </div>
-  )
+  );
 }
