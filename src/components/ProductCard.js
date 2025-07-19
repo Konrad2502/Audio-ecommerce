@@ -1,4 +1,3 @@
-import React from 'react';
 
 import ShopButton from './ui/ShopButton';
 

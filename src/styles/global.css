@@ -27,7 +27,7 @@
     }
 
     .heading-2 {
-        @apply font-manrope font-bold text-[40px] leadinng-[44px] tracking-[0.0375em] uppercase;
+        @apply font-manrope font-bold text-[40px] leading-[44px] tracking-[0.0375em] uppercase;
     }
 
     .heading-3 {

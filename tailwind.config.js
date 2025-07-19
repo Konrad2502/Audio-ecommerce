@@ -10,7 +10,7 @@ module.exports = {
         lightprimary: "#FBAF85",
         dark: "#101010",
         blackprimary: "#000000",
-        greyprimary: "#F1F1F1",
+        greyprimary: "#9CA3AF",
         lightgrey: "#FAFAFA",
         whiteprimary: "#FFFFFF"
       },

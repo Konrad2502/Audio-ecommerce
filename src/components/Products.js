@@ -7,7 +7,6 @@ import ProductCard from './ProductCard';
 export default function Products() {
 
  const {categories} = useContext(DataContext);
- console.log(categories)
  
   return (
     <div className="px-[70px] mt-[300px] mb-[200px]">
