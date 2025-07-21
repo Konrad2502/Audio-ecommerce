@@ -3,6 +3,7 @@ import Products from '../components/Products';
 import { DataContext } from '../context/DataContext';
 import HeadphoneProduct from '../components/HeadphoneProduct';
 
+
 export default function Headphones() { 
 
     const { products } = useContext(DataContext);
