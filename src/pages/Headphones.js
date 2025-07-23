@@ -10,6 +10,7 @@ export default function Headphones() {
     const headphonesProduct = products.filter((headphone) => (
       headphone.category === "headphones"
     ));
+   
 
   return (
     <div className='flex flex-col gap-[100px]'>

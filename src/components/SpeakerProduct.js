@@ -1,5 +1,6 @@
 import React from 'react';
 import PrimaryButton from './ui/PrimaryButton';
+import { Link } from 'react-router-dom';
 
 export default function SpeakerProduct({product, index}) {
   return (
@@ -15,7 +16,9 @@ export default function SpeakerProduct({product, index}) {
           <p className="text-greyprimary max-w-md">
            {product.description}
           </p>
+         <Link to={`/products/${product.id}`}>
           <PrimaryButton>SEE PRODUCT</PrimaryButton>
+          </Link>
         </div>
       </section>
   )

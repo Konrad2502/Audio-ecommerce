@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="flex justify-between items-start">
         <div className="max-w-[600px] flex flex-col gap-6">
           <img
-            src="./assets/shared/desktop/logo.svg"
+            src="/assets/shared/desktop/logo.svg"
             alt="logo"
             className="w-[150px]"
           />
@@ -24,18 +25,18 @@ export default function Footer() {
         </div>
         <div className="flex flex-col justify-between h-full items-end gap-12">
           <nav className="flex gap-8 uppercase text-sm tracking-[0.1em] text-white">
-            <a href="#" className="hover:text-primary transition">
+            <Link to='/' className="hover:text-primary transition">
               Home
-            </a>
-            <a href="#" className="hover:text-primary transition">
+            </Link>
+            <Link to='/headphones' className="hover:text-primary transition">
               Headphones
-            </a>
-            <a href="#" className="hover:text-primary transition">
+            </Link>
+            <Link to='speakers' className="hover:text-primary transition">
               Speakers
-            </a>
-            <a href="#" className="hover:text-primary transition">
+            </Link>
+            <Link to='/earphones' className="hover:text-primary transition">
               Earphones
-            </a>
+            </Link>
           </nav>
 
           <div className="flex gap-4 text-white text-xl">
