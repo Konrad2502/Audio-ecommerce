@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import PrimaryButton from "../components/ui/PrimaryButton";
 import LikeProducts from "../components/LikeProducts";
@@ -7,12 +7,21 @@ import { useParams } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
 import { Link } from "react-router-dom";
 import Gallery from "../components/Gallery";
+import { useCart } from "../context/CartContext";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { products } = useContext(DataContext);
-
   const product = products.find((item) => item.id === parseInt(id));
+  const { addToCart, cartItems, updateQuantity, openModal } = useCart();
+  const cartItem = cartItems.find((item) => item.id === product.id);
+
+  console.log(addToCart);
+
+  const [localQuantity, setLocalQuantity] = useState(1);
+
+  const quantity = cartItem ? cartItem.quantity : localQuantity;
+
   return (
     <div className="px-[70px] py-[100px] flex flex-col gap-[100px]">
       {product ? (
@@ -36,20 +45,41 @@ export default function ProductDetail() {
               <h1 className="heading-2">{product.name}</h1>
               <p className="text-greyprimary">{product.description}</p>
               <p className="font-bold text-lg tracking-wide">
-                ${product.price}
+                ${product.price * quantity}
               </p>
 
               <div className="flex items-center gap-4">
                 <div className="flex bg-lightgrey px-4 py-2 gap-4">
-                  <button className="text-sm font-bold text-blackprimary">
+                  <button
+                    onClick={() =>
+                      cartItem
+                        ? updateQuantity(product.id, quantity - 1)
+                        : setLocalQuantity((q) => Math.max(1, q - 1))
+                    }
+                    className="text-sm font-bold text-blackprimary"
+                  >
                     -
                   </button>
-                  <span className="text-sm font-bold">1</span>
-                  <button className="text-sm font-bold text-blackprimary">
+                  <span className="text-sm font-bold">{quantity}</span>
+                  <button
+                    onClick={() =>
+                      cartItem
+                        ? updateQuantity(product.id, quantity + 1)
+                        : setLocalQuantity((q) => q + 1)
+                    }
+                    className="text-sm font-bold text-blackprimary"
+                  >
                     +
                   </button>
                 </div>
-                <PrimaryButton>ADD TO CART</PrimaryButton>
+                <PrimaryButton
+                   onClick={() => {
+    addToCart(product, localQuantity);
+    openModal(); 
+  }}
+                >
+                  ADD TO CART
+                </PrimaryButton>
               </div>
             </div>
           </div>
@@ -74,7 +104,7 @@ export default function ProductDetail() {
               </ul>
             </div>
           </div>
-          <Gallery product={product}/>
+          <Gallery product={product} />
           <LikeProducts product={product} />
           <Products />
         </>

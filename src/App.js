@@ -9,9 +9,13 @@ import Earphones from "./pages/Earphones";
 import Speakers from "./pages/Speakers";
 import ProductDetail from "./pages/ProductDetail";
 import ScrollToTop from "./components/ScrollToTop.js";
+import CartModal from "./components/CartModal.js";
+import { useCart } from "./context/CartContext.js";
 
 
-function App() {
+function App() { 
+
+  const {isCartOpen, closeModal} = useCart()
   return (
     <Container>
       <Nav />
@@ -24,6 +28,8 @@ function App() {
         <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
       <InfoBlock />
+      {isCartOpen && <CartModal onClose={closeModal}/>}
+     
       <Footer />
     </Container>
   );
