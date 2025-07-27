@@ -11,6 +11,7 @@ import ProductDetail from "./pages/ProductDetail";
 import ScrollToTop from "./components/ScrollToTop.js";
 import CartModal from "./components/CartModal.js";
 import { useCart } from "./context/CartContext.js";
+import Checkout from "./pages/Checkout.js";
 
 
 function App() { 
@@ -26,10 +27,10 @@ function App() {
         <Route path="/speakers" element={<Speakers />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/checkout" element={<Checkout/>} />
       </Routes>
       <InfoBlock />
       {isCartOpen && <CartModal onClose={closeModal}/>}
-     
       <Footer />
     </Container>
   );

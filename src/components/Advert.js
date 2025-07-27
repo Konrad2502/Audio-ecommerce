@@ -1,5 +1,6 @@
 import React from 'react'
-import ProductButton from './ui/ProductButton'
+import ProductButton from './ui/ProductButton';
+import { Link } from 'react-router-dom';
 
 export default function Advert () {
   return (
@@ -11,7 +12,10 @@ export default function Advert () {
                 <div className='w-[250px] flex flex-col justify-between'>
                     <h2 className='heading-2 text-whiteprimary'> ZX9 speaker</h2>
                     <p className='text-whiteprimary'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                    <ProductButton/>
+                    <Link to='/products/6'>
+                      <ProductButton/>
+                    </Link>
+                  
                 </div>
             </div>
         </div>
@@ -21,7 +25,9 @@ export default function Advert () {
         >
             <div className='mx-[150px]'>
                 <h3 className='heading-3 mb-6'>ZX7 speaker</h3>
-                <ProductButton/>
+               <Link to='/products/5'>
+                      <ProductButton/>
+                    </Link>
             </div>
         </div>
         <div className='h-[320px] flex gap-5'>
@@ -31,7 +37,9 @@ export default function Advert () {
             <div className='basis-1/2 bg-lightgrey rounded-xl flex flex-col justify-center'>
                 <div className='mx-[150px]'>
                       <h3 className='heading-3 mb-6'>YX1 earphones</h3>
+                     <Link to='/products/1'>
                       <ProductButton/>
+                    </Link>
                 </div>
             </div>
         </div>

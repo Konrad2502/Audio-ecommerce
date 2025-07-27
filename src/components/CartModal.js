@@ -1,5 +1,6 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function CartModal({ onClose }) {
   const { cartItems, updateQuantity, clearCart, total } = useCart();
@@ -63,9 +64,14 @@ export default function CartModal({ onClose }) {
           <p className="text-gray-500 uppercase text-sm">Total</p>
           <p className="text-black font-bold text-lg">${total}</p>
         </div>
-        <button className="w-full bg-primary text-white py-3 uppercase tracking-wide font-semibold hover:bg-orange-600 transition">
+        <Link to='/checkout'>
+         <button 
+           onClick={onClose}
+         className="w-full bg-primary text-white py-3 uppercase tracking-wide font-semibold hover:bg-orange-600 transition">
           Checkout
         </button>
+        </Link>
+       
       </div>
     </div>
     </div>

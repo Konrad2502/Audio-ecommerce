@@ -1,5 +1,6 @@
 import React from 'react'
-import PrimaryButton from './ui/PrimaryButton'
+import PrimaryButton from './ui/PrimaryButton';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -13,7 +14,10 @@ export default function Hero() {
             <p className='text-greyprimary text-base'>
                 Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-           <PrimaryButton/>
+            <Link  to='/products/4'>
+              <PrimaryButton>See product</PrimaryButton>
+            </Link>
+         
         </div>
     </div>
   )

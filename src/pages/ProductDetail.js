@@ -15,9 +15,7 @@ export default function ProductDetail() {
   const product = products.find((item) => item.id === parseInt(id));
   const { addToCart, cartItems, updateQuantity, openModal } = useCart();
   const cartItem = cartItems.find((item) => item.id === product.id);
-
-  console.log(addToCart);
-
+  
   const [localQuantity, setLocalQuantity] = useState(1);
 
   const quantity = cartItem ? cartItem.quantity : localQuantity;
@@ -73,10 +71,10 @@ export default function ProductDetail() {
                   </button>
                 </div>
                 <PrimaryButton
-                   onClick={() => {
-    addToCart(product, localQuantity);
-    openModal(); 
-  }}
+                  onClick={() => {
+                    addToCart(product, localQuantity);
+                    openModal();
+                  }}
                 >
                   ADD TO CART
                 </PrimaryButton>
