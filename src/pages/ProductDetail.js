@@ -15,7 +15,7 @@ export default function ProductDetail() {
   const product = products.find((item) => item.id === parseInt(id));
   const { addToCart, cartItems, updateQuantity, openModal } = useCart();
   const cartItem = cartItems.find((item) => item.id === product.id);
-  
+
   const [localQuantity, setLocalQuantity] = useState(1);
 
   const quantity = cartItem ? cartItem.quantity : localQuantity;

@@ -14,6 +14,7 @@ import { useCart } from "./context/CartContext.js";
 import Checkout from "./pages/Checkout.js";
 
 
+
 function App() { 
 
   const {isCartOpen, closeModal} = useCart()

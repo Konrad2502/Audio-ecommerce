@@ -5,6 +5,7 @@ import Summary from "../components/checkout/Summary";
 import BillingDetails from "../components/checkout/BillingDetails";
 import ShippingInfo from "../components/checkout/ShippingInfo";
 import PaymentDetails from "../components/checkout/PaymentDetails";
+import OrderSummary from "../components/OrderSummary";
 
 export default function Checkout() {
   const { cartItems } = useCart();
@@ -30,6 +31,16 @@ export default function Checkout() {
     emoneyPin: "",
   });
 
+  const [isSummaryOpen, setIsSummaryOpen] = useState(false);
+
+  const openSummary = () => {
+    setIsSummaryOpen(true);
+  };
+
+  const closeSummary = () => {
+    setIsSummaryOpen(false);
+  };
+
   const handleChange = (e) => {
     const { id, value, name } = e.target;
     setFormData((prev) => ({
@@ -52,6 +63,7 @@ export default function Checkout() {
         return;
       }
     }
+    openSummary();
   };
 
   return (
@@ -74,7 +86,7 @@ export default function Checkout() {
 
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 uppercase tracking-wide font-semibold hover:bg-orange-600 transition"
+            className="w-full bg-primary rounded-md text-white py-3 uppercase tracking-wide font-semibold hover:bg-orange-600 transition"
           >
             Continue & Pay
           </button>
@@ -88,6 +100,13 @@ export default function Checkout() {
           grandTotal={grandTotal}
         />
       </div>
+      {isSummaryOpen && (
+        <OrderSummary
+          cartItems={cartItems}
+          grandTotal={grandTotal}
+          onClose={closeSummary}
+        />
+      )}
     </div>
   );
 }
