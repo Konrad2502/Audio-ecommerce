@@ -6,7 +6,6 @@ export default function PaymentDetails({ handleChange, formData }) {
       <h2 className="text-primary text-sm uppercase tracking-widest font-bold">
         Payment Details
       </h2>
-
       <div className="flex flex-col gap-2">
         <label className="text-sm font-semibold mb-1">Payment Method</label>
         <div className="flex flex-col gap-3">
@@ -32,7 +31,6 @@ export default function PaymentDetails({ handleChange, formData }) {
           </label>
         </div>
       </div>
-
       <div className="grid grid-cols-2 gap-4">
         <div className="flex flex-col gap-2 h-full">
           <label
