@@ -14,7 +14,7 @@ const OrderSummary = ({ cartItems, grandTotal, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
-      <div className="w-[540px] h-[580px] bg-white rounded-lg p-8 flex flex-col justify-between shadow-md relative">
+      <div className=" w-[340px] sm:w-[540px] h-[580px] bg-white rounded-lg p-8 flex flex-col justify-between shadow-md relative">
         <div className="flex items-center justify-center w-12 h-12 bg-primary rounded-full">
           <svg
             className="w-6 h-6 text-white"
@@ -38,7 +38,7 @@ const OrderSummary = ({ cartItems, grandTotal, onClose }) => {
           </p>
         </div>
 
-        <div className="flex rounded-lg overflow-hidden mt-6">
+        <div className="flex flex-col sm:flex-row rounded-lg overflow-hidden mt-6">
           <div className="bg-gray-100 flex-1 p-4">
             {cartItems.length > 0 && (
               <div className="flex items-center gap-4">
@@ -64,7 +64,7 @@ const OrderSummary = ({ cartItems, grandTotal, onClose }) => {
             } other items(s)`}</p>
           </div>
 
-          <div className="bg-black text-white p-4 w-1/2 flex flex-col justify-center items-start">
+          <div className="bg-black text-white p-4 w-full sm:w-1/2 flex flex-col justify-center items-start">
             <p className="uppercase text-sm opacity-70">Grand Total</p>
             <p className="text-lg font-bold mt-1">$ {grandTotal}</p>
           </div>

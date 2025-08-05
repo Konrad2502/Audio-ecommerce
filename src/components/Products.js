@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { DataContext } from "../context/DataContext";
 import ProductCard from "./ProductCard";
 
-export default function Products() {
+export default function Products({ className = "" }) {
   const { categories } = useContext(DataContext);
 
   return (
-    <div className="mt-[300px] mb-[200px] ">
-      <div className="flex gap-8 items-end">
+    <div className={`mt-[300px] mb-[200px] ${className} `}>
+      <div className="flex flex-col gap-28 items-center md:flex-row md:gap-8 md:items-end">
         {categories.map((category) => (
           <ProductCard
             key={category.id}

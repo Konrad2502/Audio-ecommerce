@@ -74,8 +74,11 @@ export default function Checkout() {
         </p>
       </Link>
 
-      <div className="flex gap-8">
-        <form className="w-[70%] flex flex-col gap-12" onSubmit={handleSubmit}>
+      <div className="flex flex-col lg:flex-row gap-8">
+        <form
+          className=" w-full lg:w-[70%] flex flex-col gap-12"
+          onSubmit={handleSubmit}
+        >
           <h1 className="heading-4 tracking-widest">Checkout</h1>
 
           <BillingDetails handleChange={handleChange} formData={formData} />

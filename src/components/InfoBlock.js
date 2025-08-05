@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function InfoBlock() {
   return (
-    <div className="flex px-[70px] my-[200px] h-[600px]">
-      <div className="basis-1/2 pr-12 flex flex-col justify-center">
+    <div className="flex flex-col md:flex-row px-[70px] my-[100px] md:my-[200px] h-auto md:h-[600px]">
+      <div className="md:basis-1/2 md:pr-12 flex flex-col justify-center text-center md:text-left mb-8 md:mb-0">
         <h2 className="heading-2">
           Bringing you the <span className="text-primary">best</span> audio gear
         </h2>
@@ -17,11 +17,10 @@ export default function InfoBlock() {
         </p>
       </div>
       <img
-        className="h-full w-1/2 object-cover"
-        src="/assets/shared/desktop/image-gallery-1.jpg"
+        className="w-full h-[300px] md:h-full md:w-1/2 object-cover rounded-xl"
+        src="/assets/shared/desktop/image-best-gear.jpg"
         alt="info"
       />
     </div>
   );
 }
-

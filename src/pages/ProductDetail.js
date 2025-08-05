@@ -30,13 +30,25 @@ export default function ProductDetail() {
             </p>
           </Link>
 
-          <div className="flex justify-between items-center gap-[100px]">
-            <img
-              src={product.image.desktop}
-              alt={product.name}
-              className="w-1/2 rounded-lg object-contain"
-            />
-            <div className="w-1/2 flex flex-col gap-6">
+          <div className=" flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between sm:gap-[100px] sm:h-[650px]">
+            <picture className="w-full sm:w-1/2 h-[300px] sm:h-full">
+              <source
+                media="(min-width: 1024px)"
+                srcSet={product.image.desktop}
+              />
+
+              <source
+                media="(min-width: 640px)"
+                srcSet={product.image.tablet}
+              />
+
+              <img
+                src={product.image.mobile}
+                alt={product.name}
+                className="h-full w-full object-contain rounded-lg"
+              />
+            </picture>
+            <div className="w-full sm:w-1/2 flex flex-col gap-6 text-center sm:text-left items-center sm:items-start">
               {product.new && (
                 <p className="subtitle-1 text-primary">NEW PRODUCT</p>
               )}
@@ -82,13 +94,13 @@ export default function ProductDetail() {
             </div>
           </div>
 
-          <div className="flex justify-between gap-[100px]">
-            <div className="w-[60%] flex flex-col gap-6">
+          <div className="flex flex-col lg:flex-row justify-between gap-14 lg:gap-[100px]">
+            <div className="w-full lg:w-[60%] flex flex-col gap-6">
               <h2 className="heading-3">FEATURES</h2>
               <p className="text-greyprimary">{product.features}</p>
             </div>
 
-            <div className="w-[40%] flex flex-col gap-4">
+            <div className="w-full sm:w-[40%] flex flex-col gap-4">
               <h2 className="heading-3">IN THE BOX</h2>
               <ul className="flex flex-col gap-2 text-greyprimary">
                 {product.includes.map((item, index) => (
