@@ -18,6 +18,8 @@ export default function Nav() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const delays = ["delay-300", "delay-500", "delay-700", "delay-1000"];
+
   return (
     <>
       <nav className=" w-full flex py-6 justify-between items-center text-white bg-dark px-4 md:px-[70px] border-b border-gray-600 relative z-50">
@@ -63,27 +65,34 @@ export default function Nav() {
         </button>
       </nav>
 
-      {isMenuOpen && (
-        <div
-          className={`
-            absolute top-[80px] left-0 w-full  bg-white text-black z-40 shadow-md
-            transition-all duration-300 ease-in-out origin-top
-            flex flex-col items-center justify-center p-6 gap-4 text-lg uppercase font-semibold tracking-wide
-            md:hidden h-[300px]
+      <div
+        className={`
+        absolute left-0 w-full bg-white text-black z-40 shadow-md
+        transition-all duration-500 ease-in-out origin-top
+        flex flex-col items-center justify-center p-6 gap-4 text-lg uppercase font-semibold tracking-wide
+        md:hidden h-[300px]
+        ${
+          isMenuOpen
+            ? "top-[80px] opacity-100 pointer-events-auto"
+            : "top-[-300px] opacity-0 pointer-events-none"
+        }
           `}
-        >
-          {["/", "/headphones", "/speakers", "/earphones"].map((path, i) => (
-            <Link
-              key={path}
-              to={path}
-              onClick={toggleMenu}
-              className="hover:text-primary transition-all duration-200"
-            >
-              {["Home", "Headphones", "Speakers", "Earphones"][i]}
-            </Link>
-          ))}
-        </div>
-      )}
+      >
+        {["/", "/headphones", "/speakers", "/earphones"].map((path, i) => (
+          <Link
+            key={path}
+            to={path}
+            onClick={toggleMenu}
+            className={`
+      hover:text-primary transition-all duration-500 transform
+      ${isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-24"}
+      ${delays[i]}
+    `}
+          >
+            {["Home", "Headphones", "Speakers", "Earphones"][i]}
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
