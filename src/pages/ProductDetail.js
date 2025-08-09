@@ -27,7 +27,7 @@ export default function ProductDetail() {
         <>
           <FadeInOnScroll>
             <Link to={`/${product.category}`}>
-              <p className="text-greyprimary cursor-pointer hover:text-gray-600 hover:font-bold transition-all duration-300">
+              <p className="text-greyprimary cursor-pointer hover:text-gray-600 hover:font-bold transition-all duration-300 mb-8 sm:mt-0">
                 Go back
               </p>
             </Link>
