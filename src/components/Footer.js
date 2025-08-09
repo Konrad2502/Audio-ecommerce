@@ -40,13 +40,13 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-4 text-white text-xl lg:flex-col lg:justify-between lg:items-end">
-          <a href="#" className="hover:text-primary transition">
+          <a href="/" className="hover:text-primary transition">
             <FaFacebookF />
           </a>
-          <a href="#" className="hover:text-primary transition">
+          <a href="/" className="hover:text-primary transition">
             <FaTwitter />
           </a>
-          <a href="#" className="hover:text-primary transition">
+          <a href="/" className="hover:text-primary transition">
             <FaInstagram />
           </a>
         </div>
