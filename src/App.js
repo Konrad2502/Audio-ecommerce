@@ -12,12 +12,12 @@ import ScrollToTop from "./components/ScrollToTop.js";
 import CartModal from "./components/CartModal.js";
 import { useCart } from "./context/CartContext.js";
 import Checkout from "./pages/Checkout.js";
+import FadeInOnScroll from "./features/FadeInScroll.js";
+import { useLocation } from "react-router-dom";
 
-
-
-function App() { 
-
-  const {isCartOpen, closeModal} = useCart()
+function App() {
+  const { isCartOpen, closeModal } = useCart();
+  const location = useLocation();
   return (
     <Container>
       <Nav />
@@ -28,10 +28,12 @@ function App() {
         <Route path="/speakers" element={<Speakers />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/checkout" element={<Checkout/>} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
-      <InfoBlock />
-      {isCartOpen && <CartModal onClose={closeModal}/>}
+      <FadeInOnScroll delay={100} key={location.pathname}>
+        <InfoBlock />
+      </FadeInOnScroll>
+      {isCartOpen && <CartModal onClose={closeModal} />}
       <Footer />
     </Container>
   );
