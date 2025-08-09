@@ -2,7 +2,7 @@ import React from "react";
 
 export default function InfoBlock() {
   return (
-    <div className="flex flex-col md:flex-row px-[70px] my-[100px] md:my-[200px] h-auto md:h-[600px]">
+    <div className="flex flex-col md:flex-row px-[70px] my-[100px] md:my-[100px] h-auto md:h-[600px]">
       <div className="md:basis-1/2 md:pr-12 flex flex-col justify-center text-center md:text-left mb-8 md:mb-0">
         <h2 className="heading-2">
           Bringing you the <span className="text-primary">best</span> audio gear
