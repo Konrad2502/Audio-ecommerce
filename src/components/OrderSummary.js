@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-const OrderSummary = ({ cartItems, grandTotal, onClose }) => {
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  console.log(totalItems, cartItems, cartItems[0]);
-
+const OrderSummary = ({ grandTotal, onClose }) => {
+  const { cartItems, totalItems, clearCart } = useCart();
   const navigate = useNavigate();
 
   const handleClick = () => {
+    clearCart();
     navigate("/");
     onClose();
   };
+  const otherCount = Math.max(0, totalItems - (cartItems[0]?.quantity ?? 0));
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
@@ -59,9 +60,7 @@ const OrderSummary = ({ cartItems, grandTotal, onClose }) => {
               </div>
             )}
 
-            <p className="text-sm text-gray-400 mt-4 border-t pt-2">{`and ${
-              totalItems === 0 ? 0 : totalItems - cartItems[0].quantity
-            } other items(s)`}</p>
+            <p className="text-sm text-gray-400 mt-4 border-t pt-2">{`and ${otherCount} other items(s)`}</p>
           </div>
 
           <div className="bg-black text-white p-4 w-full sm:w-1/2 flex flex-col justify-center items-start">

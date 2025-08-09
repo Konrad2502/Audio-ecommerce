@@ -54,6 +54,8 @@ export function CartProvider({ children }) {
     0
   );
 
+  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   function openModal() {
     setIsCartOpen(true);
   }
@@ -74,6 +76,7 @@ export function CartProvider({ children }) {
         openModal,
         closeModal,
         isCartOpen,
+        totalItems,
       }}
     >
       {children}

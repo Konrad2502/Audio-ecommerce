@@ -6,8 +6,8 @@ import { HiMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 
 export default function Nav() {
-  const { cartItems, openModal } = useCart();
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const { openModal, totalItems } = useCart();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleClick = () => {
