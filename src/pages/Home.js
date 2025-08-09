@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Hero />
       <FadeInOnScroll delay={200}>
-        <Products className="px-[70px] pt-[200px]" />
+        <Products className="px-[70px] pt-[100px]" />
       </FadeInOnScroll>
       <Advert />
     </div>
