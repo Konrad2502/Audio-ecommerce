@@ -5,10 +5,13 @@ export default function FadeInOnScroll({
   delay = 0,
   className = "",
 }) {
-  const ref = useRef();
+  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,17 +19,14 @@ export default function FadeInOnScroll({
           observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(node);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(node);
+      observer.disconnect();
     };
   }, []);
 
