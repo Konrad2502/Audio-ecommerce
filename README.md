@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+🛒 E‑Commerce Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a multi‑page e‑commerce web application built with React, Tailwind CSS, and React Context API. The project includes product categories, individual product detail pages, a shopping cart, and a checkout flow with a summary modal after completing the form and clicking Pay. It features smooth routing with React Router, modern UI/UX, and fade‑in animations on scroll.
 
-## Available Scripts
+🌍 Live Demo
 
-In the project directory, you can run:
+You can view the deployed project here: https://ecommerce-konrad.netlify.app/
 
-### `npm start`
+📸 Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here’s a preview of the E‑Commerce Web App:
+![E‑Commerce Web App Preview](./src/screenshot/screenshot-audio.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+📌 Features
 
-### `npm test`
+✅ Multi‑page structure using React Router✅ Context API for cart and product state management✅ Fully responsive design with Tailwind CSS✅ Dynamic product detail pages with features, gallery, and included items✅ Shopping cart with add/remove items and quantity updates✅ Checkout page with validation and order summary✅ Modal confirmation after placing an order✅ Reusable and modular React components✅ Smooth fade‑in animations on scroll✅ Modern, clean, and responsive UI/UX design
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠️ Tech Stack
 
-### `npm run build`
+React – For building UI componentsReact Router – For multi‑page navigationReact Context API – For global cart state managementTailwind CSS – For styling and responsive designReact Hooks – For managing component logic and stateJSON Data – For dynamic product rendering
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🚀 Installation & Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repository:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/Konrad2502/Ecommerce-Web-App.git
+cd Ecommerce-Web-App
 
-### `npm run eject`
+Install dependencies:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Open http://localhost:3000 in your browser to view the project.
 
-## Learn More
+📜 Available Scripts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm start – Runs the app in development modenpm test – Launches the test runnernpm run build – Builds the app for productionnpm run preview – Previews the production build locally (if using Vite)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📚 What I Learned
 
-### Code Splitting
+This project helped me deepen my knowledge of:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🎯 React Router – Implementing advanced multi‑page navigation🎯 React Context API – Managing global cart state effectively🎯 Tailwind CSS – Building fast, responsive, and modern UI🎯 Checkout Flow – Designing forms, validations, and order summary🎯 Reusable Components – Structuring scalable UI elements🎯 Animations – Adding smooth fade‑in effects on scroll for better UX🎯 E‑Commerce Logic – Cart operations, totals, and confirmation modals
 
-### Analyzing the Bundle Size
+📬 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If you have any questions, feel free to reach out:
 
-### Making a Progressive Web App
+🔗 GitHub: Konrad2502✉️ Email: konrad.litak@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
