@@ -4,7 +4,7 @@ This is a multi‑page e‑commerce web application built with React, Tailwind C
 
 🌍 Live Demo
 
-You can view the deployed project here: https://ecommerce-konrad.netlify.app/
+You can view the deployed project here: https://e-commerce-audio1.netlify.app/
 
 📸 Preview
 
